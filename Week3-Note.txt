@@ -1,0 +1,21 @@
+Multivariate data
+This means more than two variables, each of which is categorical or quantitative data. Ex: Three or more columns. Think about looking at the responses in a table or form.
+
+How to look at the data:
+
+Table of frequencies of each answer from the categorical responses
+Table can be two-dimensional. Ex: (Female, HS degree), (Male, HS Degree), Female, College), (Male, College)
+Can add a Total column in either direction
+Visualize with a bar chart, or side by side bar chart
+Mosaic plot shows tiles where size is proportional to number of responses
+Looking at associations with multivariate quantitative data
+More than one trait with measured numeric values. How to visualize more than one trait
+
+Scatter plot
+Can use different colors for different categorical data
+Expressing numerically:
+
+Correlation coefficient, ex: the Pearson correlation (R or 
+): number from -1 to 1 indicating the strength and sign of association between two variables
+Closer to -1 or 1: Strong association
+Remember... correlation does not mean causation! Don't forget about confounding variables, which are outside influences that change the relationship between the independent and dependent variables.

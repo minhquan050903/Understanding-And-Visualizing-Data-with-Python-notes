@@ -1,0 +1,61 @@
+Two key types of data:
+
+organic / process data
+Generated organically, often over time, as the result of a process
+Can result in very large data sets -> "Big Data"
+Processing can require significant computational resources. Even just getting the data in a format that can be mined can require lots of resources.
+Ex: Netflix viewing history
+Ex: Weather station data collected over time
+"designed" data collection
+Individuals sampled from a population
+Trying to learn more about a target population
+Typically smaller data sets
+Data collected for very specific reasons, rather than reflections of ongoing processes
+Ex: Interviewing people on their opinion
+In both cases, are the data i.i.d.?
+
+i: Independent
+i.d: Identically distributed
+Given i.i.d data, you can estimate features of the distribution with a certain amount of precision. Example: mean, std, etc.
+If not i.i.d.?
+
+Ex: If students are cheating, students sitting next to each other have similar scores.
+Variability between data, not identically distributed.
+Need different analytic procedures. Need to account for dependencies and differences.
+Always ask where the data came from! Always ask when you can assume data is i.i.d.
+
+Quantitative variables
+
+Numerical, measurable quantities in which arithmetic operations often make sense
+Continuous: Could take any value within an interval, many possible values
+Discrete: Countable value, finite number of values
+Categorical (or qualitative) variable
+
+Classifies individuals or items into different groups
+Ordinal: groups have an order or ranking, such as freshman
+Nominal: Groups are merely names, no ranking, such as marital status
+Considering the data in this table:
+
+BMI is numerical, continuous
+Race is categorical, coded so that each integer represents a category
+Age is numerical, discrete? Even though it is reported as just an integer, time is often considered continuous.
+Adult is 0 or 1, it is categorical nominal.
+Exploratory vs Confirmatory
+Confirmatory: Scientific method, specify a fasifiable hypothesis and then test it. Collect data to address a single pre-specified question.
+Exploratory: Collect and analyze data without first pre-specifying a question. Watch out for overfitting, multiple testing, p-hacking.
+The more questions you ask from a dataset, the more likely you are to draw a misleading conclusion.
+
+Comparative vs non-comparative
+Comparative: Contrast one population to another
+Non-comparative: Estimating or predicting quantitative values. Ex: Predict stock performance
+
+Observational data and experiments
+Observational: arises "naturally"
+Experimental: involves manipulation or assignment
+
+Power and bias
+Power analysis: Process to assess whether a given study design is likely to yield meaningful findings
+Bias: Measurements that are systematically off-target, or sample is not representative of population of interest. Observational studies are especially vulnerable to bias
+
+Discrete data ->Integers
+Continuous data -?Floats

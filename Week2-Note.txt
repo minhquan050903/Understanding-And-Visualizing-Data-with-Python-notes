@@ -1,0 +1,94 @@
+Categorical data: Tables, Bar Charts and Pie Charts
+Categorial data classfies individuals or items into different groups.
+
+The most common way to summarize the data is to group by category and assemble a frequency table of counts, percentages.
+
+The most common way to visualize is with a bar chart. Sometimes you arrange in descending order.
+
+Don't recommend pie charts: Labels can overlap, it's hard to compare slice sizes.
+
+Quantitative data: Histogram
+Great first look at the data. Allows you to see the distribution of data in a compact way. Each rectangle is called a bin. Python will automatically set bin edges.
+
+4 aspects:
+
+Shape: Overall appearance. Can be symmetric, bell-shaped, left skewed, right skewed, etc. Unimodal = one peak. "Right skewed" means it leans to the left and has a tail to the right.
+Center: Mean or median position
+Spread: How far our data spreads. Range, interquartile range (IQR), standard deviation, variance
+Outliers: Data points that fall far from the bulk of the data
+Example summary of the features on a distribution- cover each of those four aspects. "The distribution of adult male heights is roughly bell shaped with a center of about 68 inches, a range of 13 inches (62 to 75) and no apparent outliers."
+
+Quantitative data: Numerical summaries
+5 number summary:
+
+Min (0%)
+1st quartile (25%)
+Median (50%)
+3rd quartile (75%)
+Max (100%)
+Others
+
+Mean
+IQR Inter quartile range (20-75%), useful when the data is left or right skewed.
+Standard deviation: Average size that points fall away from the mean
+Sample size
+Standard score (Empirical Rule)
+For a normal distribution:
+
+68% of data fall within 1-sigma of the mean
+95% of data fall within 2-sigma of the mean
+99.7% of data fall within 3-sigma of the mean
+This allows us to get an idea of how unusual a data point is. 
+
+Tables, histograms, and boxplots in Python
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+Load a tips dataset, which is a default dataset in seaborn
+
+tips_data = sns.load_dataset("tips")
+View it in table form, just the first five lines.
+
+tips_data.head()
+
+Describe the table to me. Default behavior is only to describe quantitative metrics in numerical columns. I can use the include parameter to explicitly add additional columns
+
+tips_data.dtypes
+total_bill     float64
+tip            float64
+sex           category
+smoker        category
+day           category
+time          category
+size             int64
+dtype: object
+tips_data.describe()
+tips_data.describe(include=['float','int64','category'])
+
+
+
+Create a histogram
+Look at the total bill.
+
+# Plot a histogram of the total bill amount
+sns.distplot(tips_data['total_bill'], kde=False).set_title("Histogram of total bill")
+plt.show()
+
+
+Create a boxplot
+sns.boxplot(tips_data["total_bill"]).set_title("Box plot of total bill")
+plt.show()
+
+By default, if we want to plot them both together, it will pile separate plots on top of each other. Let's see:
+
+sns.boxplot(tips_data["total_bill"])
+sns.boxplot(tips_data["tip"]).set_title("Box plot of total bill")
+plt.show()
+
+Plot by groups
+Separate by smokers and not smokers. All we have to do is provide the category by which we are splitting the data as the y-axis.
+
+tips_data.head()
+
+sns.boxplot(x = tips_data["tip"], y=tips_data["smoker"])
+plt.show()
